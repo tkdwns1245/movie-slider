@@ -1,4 +1,8 @@
-import gsap from "gsap.js";
+import { gsap } from 'gsap';
+import { Flip } from 'gsap/Flip';
+import 'gsap/ScrollTrigger';
+import 'gsap/MotionPathPlugin'
+
 
 console.clear();
 
