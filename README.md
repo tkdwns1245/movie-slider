@@ -13,4 +13,12 @@ https://wsss.tistory.com/1852 블로그님의 이미지 슬라이드 에 영감�
    4. 결론은 require 구문은 브라우저에서 동작하지 않는단다. 이를 대체하기위해 webpack 과 같은 모듈 번들러를 활용한단다.
 
    5. 이번 기회에 webpack 에 대해서 공부할겸 모듈 번들링 하는 법을 학습 해 보아야 겠다.
-   
+
+- module bundling
+
+   1. module 을 bundling 하는법은 생각보다 간단했다. webpack 관련 패키지를 npm 으로 install 한 후 webpack.config.js 파일을 생성하여 entry point 와 output point 를 지정 해주고 명령어를 활용해 번들링만 해주면 되었다.
+   2. 그리고 require 가 webpack 모듈 번들러에 의해서 정상적으로 실행되는 것을 확인했다!!
+
+   3. 그리고 번들링된 파일을 활용해 프로젝트를 실행 해 보니... 그래도 에러가 발생한다. 원인을 확인 해 보니 결국은 import 를 통해 모듈 내부의 코드를 가져오는 것이 아니라 파일 자체를 script 태그에 넣어줘야 한다..
+
+   4. 결국 script 태그에 node_modules 내부에 있는 패키지를 접근 할 수 있도록 express 에 설정 하고 프로그램을 실행 해 보니 성공적으로 프로젝트가 동작하는것을 확인 할 수 있었다. 
